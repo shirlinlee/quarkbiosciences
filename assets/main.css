@@ -1,0 +1,15 @@
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ccc; 
+}
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+    opacity: 0;
+}
+
+h1{
+    color: pink;
+}
