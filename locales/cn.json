@@ -1,0 +1,17 @@
+{
+  "links": {
+    "home": "首页",
+    "about": "关于我",
+    "english": "EN",
+    "tradition": "TW",
+    "simple": "CN"
+  },
+  "home": {
+    "title": "首页",
+    "introduction": "这是简中页面"
+  },
+  "about": {
+    "title": "关于我",
+    "introduction": "这是简中页面"
+  }
+}

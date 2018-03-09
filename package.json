@@ -15,9 +15,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fs": "0.0.1-security",
-    "vue-i18n": "^7.3.2",
+    "jshint": "^2.9.5",
     "net": "^1.0.2",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-i18n": "^7.3.2",
+    "vuex": "^3.0.1",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

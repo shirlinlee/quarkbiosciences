@@ -13,11 +13,12 @@ export default {
   head() {
     return { title: this.$t('home.title') }
   },
-  asyncData ({ params }) {
-      return axios.get(`http://219.87.143.101/API/Location/`)
-      .then((res) => {
-        return { testMsg: res.data }
-      })
-   },
+  
+  // asyncData ({ params }) {
+  //     return axios.get(`http://219.87.143.101/API/Location/`)
+  //     .then((res) => {
+  //       return { testMsg: res.data }
+  //     })
+  //  },
 }
 </script>

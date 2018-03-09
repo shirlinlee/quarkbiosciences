@@ -14,6 +14,7 @@ module.exports = {
     ]
   },
   css: [
+    'assets/reset.css',
     'assets/main.css'
   ],
   router: {
@@ -21,7 +22,7 @@ module.exports = {
   },
   plugins: ['~/plugins/i18n.js'],
   generate: {
-    routes: ['/', '/about', '/fr', '/fr/about']
+    routes: ['/', '/about', '/cn', '/cn/about','/tw','/tw/about']
   },
   /*
   ** Customize the progress bar color

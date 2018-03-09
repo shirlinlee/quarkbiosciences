@@ -1,51 +1,84 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <nav class="Header__Menu">
-        <nuxt-link class="Header__Link" :to="$i18n.path('')" exact>
+  <div id="top" class="W100">
+    <nav class="headerMenu W100">
+        <nuxt-link class="headerLink f15" :to="$i18n.path('')" exact>
           {{ $t('links.home') }}
         </nuxt-link>
-        <nuxt-link class="Header__Link" :to="$i18n.path('about')" exact>
+        <nuxt-link class="headerLink f15" :to="$i18n.path('about')" exact>
           {{ $t('links.about') }}
         </nuxt-link>
-        <nuxt-link class="Header__Link" v-if="$i18n.locale === 'en'" :to="`/fr` + $route.fullPath" active-class="none" exact>
-          {{ $t('links.french') }}
-        </nuxt-link>
-        <nuxt-link class="Header__Link" v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" active-class="none" exact>
+        
+    </nav>
+    <ul class="langMenu">
+      <li class="langLink">
+        <nuxt-link v-bind:class="{ 'active': $i18n.locale === 'en' }" :to="`/en` + $route.fullPath" active-class="none" exact>
           {{ $t('links.english') }}
         </nuxt-link>
-      </nav>
+      </li>
+      <li class="langLink">
+        <nuxt-link v-bind:class="{ 'active': $i18n.locale === 'tw' }" :to="`/tw` + $route.fullPath" active-class="none" exact>
+          {{ $t('links.tradition') }}
+        </nuxt-link>
+      </li>
+      <li class="langLink">
+        <nuxt-link v-bind:class="{ 'active': $i18n.locale === 'cn' }" :to="`/cn` + $route.fullPath" active-class="none" exact>
+          {{ $t('links.simple') }}
+        </nuxt-link>
+      </li>         
+        
+    </ul>
   </div>
   
 </template>
 
 <style>
-  .Header__Menu {
-    float: right;
+  #top {
+    position: fixed;
+    height: 80px;
+    border-bottom: 5px solid #f57f42;
+    background: #fff;
   }
-  .Header__Link {
+  .headerMenu {
+    float: left;
+  }
+  .headerLink {
     font-size: 16px;
-    color: #fff;
-    border: 1px solid #fff;
+    color: #666;
     padding: 7px 12px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 5px;
     margin-left: 10px;
   }
-  .Header__Link:hover {
+  .headerLink:hover {
     color: #2e2f30;
     background-color: #fff;
   }
   .nuxt-link-active {
-    color: cyan;
+    /* color: cyan; */
   }
-  .Content {
-    padding: 50px 0;
-    text-align: center;
+  h1{
+    color: green;
   }
-  .Content__Title {
-    font-weight: 300;
-    padding-bottom: 30px;
+  ul.langMenu {
+    background: #f57f42;
+    position: absolute;
+    right: -20px;
+    display: inline-block;
+    height: 35px;
+    padding: 0 35px 0 20px;
+    transform: skewX(30deg);
   }
+  ul.langMenu li{
+    float: left;
+    line-height: 35px;
+    transform: skewX(-30deg);
+  }
+  ul.langMenu li a {
+    color: #fff;
+    line-height: 1;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-size: 12px;
+    line-height: 35px;
+    display: inline-block;
+}
   
 </style>
