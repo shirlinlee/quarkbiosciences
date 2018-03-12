@@ -1,7 +1,7 @@
 <template>
-  <div class="Content">
+  <div class="kv">
     <div class="container">
-      <h1 class="Content__Title">{{ $t('home.title') }}</h1>
+      <h1 class="title">{{ $t('home.title') }}</h1>
       <p>{{ $t('home.introduction') }}</p>
     </div>
   </div>
@@ -10,6 +10,9 @@
 <script>
 import axios from 'axios';
 export default {
+  async fetch({app,store}) {
+    await store.dispatch('GET_DATA')
+  },
   head() {
     return { title: this.$t('home.title') }
   },
@@ -20,5 +23,13 @@ export default {
   //       return { testMsg: res.data }
   //     })
   //  },
+  
 }
 </script>
+<style>
+.kv{
+  padding-top: 80px;
+}
+</style>
+
+
