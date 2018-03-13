@@ -3,10 +3,10 @@ body{
     width: 100%;
     background-color: #ccc; 
 }
-.page-enter-active, .page-leave-active {
-    transition: opacity .5s;
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
 }
-.page-enter, .page-leave-active {
+.fade-enter, .fade-leave-to{
     opacity: 0;
 }
 

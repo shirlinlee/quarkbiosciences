@@ -12,30 +12,34 @@ export const state = () => ({
 
 export const mutations = {
   SET_LANG(state, locale) {
-    console.log(locale, 'mutations');
+    // console.log(locale, 'mutations');
     if (state.locales.indexOf(locale) !== -1) {
       state.locale = locale
     }
   },
   SET_DATA(state,data) {
+    // console.log(state.locale);
   	if(state.locale === 'en') {
   	  state.en = data
-  	} else if(state.locale === 'cn'){
+  	} else if (state.locale === 'cn'){
   		state.cn = data
   	} else {
       state.tw = data
     }
-  }
+  },
 }
 
 export const actions = {
   async GET_DATA({commit,state}) {
-    console.log(commit,state);
-  	const { data } = await axios.get('/Index/GetBackground?langId=1',{
+    // console.log(this.history);
+    let lang = 1
+    if (state.locale === 'cn') lang = 2
+    else if (state.locale === 'tw') lang = 1
+  	const { data } = await axios.get(`/Index/GetBackground?langId=${lang}`,{
   		headers: {
   			language: state.locale
   		}
   	}) 
-  	commit('SET_DATA',data)
+  	commit('SET_DATA',data);
   }
 }
