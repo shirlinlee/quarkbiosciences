@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Roboto');
 body{
     min-height: 100vh;
     width: 100%;
@@ -24,6 +25,14 @@ hr {
     margin: 0;
 }
 
+.f_robo{
+    font-family: 'Roboto', sans-serif;
+}
+
+.f_nuni{
+    font-family: 'Nunito', sans-serif;
+}
+
 .mb {
     display: none;
 }
@@ -36,8 +45,8 @@ hr {
     background-color: #f7f0b0;
 }
 
-.bg_red {
-    background-color: #d03838;
+.bg_orange {
+    background-color: #f57f42;
 }
 
 .bg_white {
@@ -307,7 +316,4 @@ hr {
     position: relative;
 }
 
-h1{
-    color: pink;
-}
 

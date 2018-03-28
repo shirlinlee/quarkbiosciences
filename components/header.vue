@@ -68,11 +68,7 @@
   .nuxt-link-active {
     /* color: cyan; */
   }
-  
-  h1 {
-    color: green;
-  }
-  
+
   ul.langMenu {
     background: #f57f42;
     position: absolute;

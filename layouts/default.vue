@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="en">
     <Header/>
     <nuxt/>
   </div>
@@ -11,6 +11,12 @@
   export default {
     components: {
       Header
+    },
+    mounted: function() {
+      console.log(this.$store.state.locale)
+      this.$nextTick(function() {
+
+      })
     }
   }
 </script>
