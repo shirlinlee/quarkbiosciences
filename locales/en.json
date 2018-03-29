@@ -7,8 +7,11 @@
     "simple": "CN"
   },
   "home": {
-    "kv_title": "Using expression to <br> improve cancer care.",
-    "kv_des": "Collaborating with reknowned institutions in Taiwan and Southeast Asia, QuarkBio is hoping to find expression biomarkers that can assist in the treatment of pediatric cancer.",
+    "kv_slides":[
+      {"title": "Using expression to <br> improve cancer care.","imgPath":"images/kv_01.jpg", "des": "Collaborating with reknowned institutions in Taiwan and Southeast Asia, QuarkBio is hoping to find expression biomarkers that can assist in the treatment of pediatric cancer."},
+      {"title": "Using expression to <br> improve cancer care.","imgPath":"images/kv_02.jpg", "des": "Collaborating with reknowned institutions in Taiwan and Southeast Asia, QuarkBio is hoping to find expression biomarkers that can assist in the treatment of pediatric cancer."}
+    ],
+    
     "introduction": "This is an introduction in English."
   },
   "about": {

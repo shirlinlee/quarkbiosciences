@@ -1,5 +1,5 @@
 <template>
-  <div class="en">
+  <div v-bind:class="[ this.$store.state.locale ]" >
     <Header/>
     <nuxt/>
   </div>
@@ -12,10 +12,16 @@
     components: {
       Header
     },
+    data: function() {
+      return {
+        lang: 'TW'
+      }
+    },
     mounted: function() {
-      console.log(this.$store.state.locale)
+      const storeData = this.$store.state;
+      // console.log(storeData.locale)
       this.$nextTick(function() {
-
+          // console.log(lang)
       })
     }
   }

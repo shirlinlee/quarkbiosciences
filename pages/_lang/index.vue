@@ -1,15 +1,29 @@
 <template>
   <transition name="fade">
-    <div id="kv">
-      <div class="container f_white W50">
-        <h1 class="title f55" v-html="$t('home.kv_title')">{{ $t('home.kv_title') }}</h1>
-        <h3 class="kv_des f15">{{ $t('home.kv_des') }}</h3>
-        <!-- <img v-bind:src="imgPc" v-bind:alt="$t('home.kv_title')" width="100%"> -->
+    <div id="index">
+      <div id="kv">
+        <div class="kv_slide W100">
+            <div class="kv_slide_item" v-for="(kv_slide,index) in $t('home.kv_slides')" :key="`kv_slide_${index}`">
+              <img :src="kv_slide.imgPath" width="100%"/>
+              <div class="kv_text f_white W50 poA">
+                <h1 class="title f55" v-html="kv_slide.title">{{ kv_slide.title }}</h1>
+                <h3 class="kv_des f15">{{ kv_slide.des }}</h3>
+              </div>
+            </div>
+        </div>
       </div>
-      <div class="kv_slide">
-          <img v-for="(kv_slide,index) in kv_slides" :src="kv_slide" :key="`kv_slide_${index}`"/>
+       <!-- kv -->
+      <div id="home_intro">
+          <h4 class="title_sec">What We Do</h4>
+          <p class="f_grey f15 W1120 t_left">
+            Gene expression profiles have played important roles in the guidance of treatment. PanelChip™, a multi-gene expression analysis platform, provides a clinical-friendly solution to validate RNA classifiers. From translational research to clinical studies, we provide an unparalleled tool that is faster, simpler and more economical.
+            <img src="/images/index_bg_02.png" class="poA" width="80%" alt="">
+          </p>
+          
+          <a href="#" class="btn"><span class="f_grey">Discover</span><span class="f_orange">PanelChips™</span></a>
       </div>
     </div>
+
   </transition>
 </template>
 
@@ -32,15 +46,12 @@
         imgMb: storeData[storeData.locale].mobile,
         imgPc: storeData[storeData.locale].desktop,
         imgDefault: 'http://www.bomb01.com/upload/news/original/a29af7ee95d9cf379049b44016d1cd4f.jpg',
-        kv_slides:[
-          '~assets/images/kv_01.jpg',
-          '~assets/images/kv_02.jpg'
-          ]
+        
       }
     },
     head() {
       return {
-        title: this.$t('home.kv_title')
+        // title: this.kv_slide.des
       }
     },
     mounted: function() {
@@ -80,18 +91,52 @@
 <style>
   #kv {
       padding-top: 80px;
+      height: 100vh;
+      overflow: hidden;
   }
   #kv h1{
       white-space: nowrap;
       padding-bottom: 15px;
   }
-  #kv .container{
-      padding-left: 25px;
+  .kv_slide_item{
+      position: relative;
+  }
 
+  .kv_text {
+      top: 50%;
+      left: 5%;
+      margin-top: -110px;
   }
   .kv_des{
 
   }
+  #home_intro{
+    padding: 70px 0;
+    text-align: center;
+    background-image: url(/images/index_bg_01.png);
+    background-repeat: repeat-x;
+    /* background-size: contain; */
+    margin-top: -22vh;
+    z-index: 50;
+    position: relative;
+    overflow: visible;
+  }
+  #home_intro:after{
+      content: "";
+      display: block;
+      width: 60%;
+      height: 100%;
+      transform: skewX(50deg);
+      opacity: 0.75;
+      background-color: #f57f42; 
+  }
+  #home_intro p{
+    padding-bottom: 20px;
+  }
+   #home_intro img{
+     bottom: 0;
+     left: 10%;
+   }
 </style>
 
 
